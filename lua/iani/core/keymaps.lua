@@ -17,7 +17,27 @@ keymap.set("i", "kj", "<ESC>", { desc = "Exit insert mode with kj" })
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- delete single character without copying into register
--- keymap.set("n", "x", '"_x')
+keymap.set("n", "x", '"_x')
+
+-- trouble
+keymap.set("n", "<leader>xx", function()
+  require("trouble").toggle()
+end, { desc = "Trouble" })
+keymap.set("n", "<leader>xw", function()
+  require("trouble").toggle("workspace_diagnostics")
+end, { desc = "Workspace diagnostics" })
+keymap.set("n", "<leader>xd", function()
+  require("trouble").toggle("document_diagnostics")
+end, { desc = "Document diagnostics" })
+keymap.set("n", "<leader>xq", function()
+  require("trouble").toggle("quickfix")
+end, { desc = "Quickfix" })
+keymap.set("n", "<leader>xl", function()
+  require("trouble").toggle("loclist")
+end, { desc = "Loclist" })
+keymap.set("n", "gR", function()
+  require("trouble").toggle("lsp_references")
+end, { desc = "T References" })
 
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
