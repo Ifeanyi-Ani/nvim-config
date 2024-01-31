@@ -14,21 +14,47 @@ return {
 
     -- configure nvim-tree
     nvimtree.setup({
+      sync_root_with_cwd = true,
+      --false by default, will change cwd of nvim-tree to that of new buffer's when opening nvim-tree
+      respect_buf_cwd = true,
+      -- show lsp diagnostics in the signcolumn
+      diagnostics = {
+        enable = true,
+        icons = {
+          hint = "",
+          info = "",
+          warning = "",
+          error = "",
+        },
+      },
       view = {
         width = 35,
         relativenumber = true,
       },
       -- change folder arrow icons
+
       renderer = {
+        group_empty = true,
+        highlight_git = true,
+        highlight_opened_files = "none",
+        root_folder_label = ":~",
         indent_markers = {
           enable = true,
+          icons = {
+            corner = "└ ",
+            edge = "│ ",
+            none = "  ",
+          },
         },
         icons = {
+          show = {
+            file = true,
+            folder = true,
+            folder_arrow = true,
+            git = true,
+            modified = true,
+          },
           glyphs = {
-            folder = {
-              arrow_closed = "", -- arrow when folder is closed
-              arrow_open = "", -- arrow when folder is open
-            },
             git = {
               unstaged = "",
               staged = "",
