@@ -1,17 +1,37 @@
 return {
   "mfussenegger/nvim-dap",
   dependencies = {
-    {
+    --[[ {
       "microsoft/vscode-js-debug",
       build = "npm install --legacy-peer-daps && npx gulp vsDebugServerBundle && mv dist out",
-    },
+    }, ]]
     "theHamsta/nvim-dap-virtual-text",
     "rcarriga/nvim-dap-ui",
     "mxsdev/nvim-dap-vscode-js",
     {
-      "Joakker/lua-json5",
-      build = "./install.sh",
+      "jay-babu/mason-nvim-dap.nvim",
+      dependencies = "mason.nvim",
+      cmd = { "DapInstall", "DapUninstall" },
+      opts = {
+        -- Makes a best effort to setup the various debuggers with
+        -- reasonable debug configurations
+        automatic_installation = true,
+
+        -- You can provide additional configuration to the handlers,
+        -- see mason-nvim-dap README for more information
+        handlers = {},
+
+        -- You'll need to check that you have the required things installed
+        -- online, please don't ask me how to install them :)
+        ensure_installed = {
+          -- Update this to ensure that you have the debuggers for the langs you want
+        },
+      },
     },
+    -- {
+    --   "Joakker/lua-json5",
+    --   build = "./install.sh",
+    -- },
   },
   config = function()
     local dap = require("dap")
