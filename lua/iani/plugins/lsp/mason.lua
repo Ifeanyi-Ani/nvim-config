@@ -16,16 +16,16 @@ return {
     -- enable mason and configure icons
     mason.setup({
 
-        log_level = vim.log.levels.DEBUG,
-        registries = {
-            "lua:my-registry",
-            "github:mason-org/mason-registry",
-        },
+      log_level = vim.log.levels.DEBUG,
+      registries = {
+        "lua:my-registry",
+        "github:mason-org/mason-registry",
+      },
 
-        providers = {
-            "mason.providers.client",
-            "mason.providers.registry-api",
-        },
+      providers = {
+        "mason.providers.client",
+        "mason.providers.registry-api",
+      },
       ui = {
         icons = {
           package_installed = "✓",
@@ -61,6 +61,8 @@ return {
         -- "black", -- python formatter
         -- "pylint", -- python linter
         "eslint_d", -- js linter
+        "js-debug-adapter",
+        "typescript-language-server",
       },
     })
   end,
