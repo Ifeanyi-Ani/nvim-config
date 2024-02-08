@@ -18,7 +18,6 @@ return {
 
       log_level = vim.log.levels.DEBUG,
       registries = {
-        "lua:my-registry",
         "github:mason-org/mason-registry",
       },
 
@@ -47,7 +46,7 @@ return {
         "graphql",
         "emmet_ls",
         "prismals",
-        -- "pyright",
+        -- "pyright", 
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed
@@ -61,7 +60,7 @@ return {
         -- "black", -- python formatter
         -- "pylint", -- python linter
         "eslint_d", -- js linter
-        "typescript-language-server",
+        "typescript-language-server", 
       },
     })
   end,
