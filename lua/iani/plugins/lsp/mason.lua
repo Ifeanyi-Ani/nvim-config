@@ -1,5 +1,7 @@
 return {
   "williamboman/mason.nvim",
+  cmd = "Mason",
+  event = "BufReadpre",
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -46,7 +48,7 @@ return {
         "graphql",
         "emmet_ls",
         "prismals",
-        -- "pyright", 
+        "pyright", 
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed
@@ -56,9 +58,9 @@ return {
       ensure_installed = {
         "prettier", -- prettier formatter
         "stylua", -- lua formatter
-        -- "isort", -- python formatter
-        -- "black", -- python formatter
-        -- "pylint", -- python linter
+        "isort", -- python formatter
+        "black", -- python formatter
+        "pylint", -- python linter
         "eslint_d", -- js linter
         "typescript-language-server", 
       },
